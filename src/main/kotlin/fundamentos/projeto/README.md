@@ -14,3 +14,6 @@ onde foi abordado alguns recursos:
 Implementei na lógica além do resultado do IMC, qual seria o peso ideal caso o valor desse divergente do IMC normal.  
 
 ###### Sei que há espaço para um melhor script, mas quis utilizar os tópicos acima. E com o avanço dos conecimentos com certeza irei implementar as melhorias necessárias.
+
+### Atualizações:
+1. Adicionando uma validação de no valor do IMC com "IF" - 02.07.2022
