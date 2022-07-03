@@ -13,30 +13,34 @@ fun main() {
     val pesoIdealMin: Double = 18.50 * (altura.toDouble() * altura.toDouble())
     val pesoIdealMax: Double = 24.99 * (altura.toDouble() * altura.toDouble())
 
-    when(resultadoImc) {
-        in 0.00..18.49 -> {
-            println("\nResultado: Abaixo do peso!\nValor do IMC: %.2f".format(resultadoImc))
-            println("Sugestão de peso: %.2f".format(pesoIdealMin) + " a %.2f".format(pesoIdealMax))
+    if(resultadoImc >= 0.00 && resultadoImc <= 50.00){
+        when(resultadoImc) {
+            in 0.00..18.49 -> {
+                println("\nResultado: Abaixo do peso!\nValor do IMC: %.2f".format(resultadoImc))
+                println("Sugestão de peso: %.2f".format(pesoIdealMin) + " a %.2f".format(pesoIdealMax))
+            }
+            in 18.50..24.99 -> {
+                println("\nResultado: Peso normal!\nValor do IMC: %.2f".format(resultadoImc))
+                println("Parabéns! Está com o seu peso ideal.")
+            }
+            in 25.00..29.99 -> {
+                println("\nResultado: Acima do peso (Sobrepeso)!\nValor do IMC: %.2f".format(resultadoImc))
+                println("Sugestão de peso: %.2f".format(pesoIdealMin) + " a %.2f".format(pesoIdealMax))
+            }
+            in 30.00..34.99 -> {
+                println("\nResultado: Obesidade nível 1!\nValor do IMC: %.2f".format(resultadoImc))
+                println("Sugestão de peso: %.2f".format(pesoIdealMin) + " a %.2f".format(pesoIdealMax))
+            }
+            in 35.00..39.99 -> {
+                println("\nResultado: Obesidade nível 2!\nValor do IMC: %.2f".format(resultadoImc))
+                println("Sugestão de peso: %.2f".format(pesoIdealMin) + " a %.2f".format(pesoIdealMax))
+            }
+            in 40.00..50.00 -> {
+                println("\nResultado: Obesidade nível 3!\nValor do IMC: %.2f".format(resultadoImc))
+                println("Sugestão de peso: %.2f".format(pesoIdealMin) + " a %.2f".format(pesoIdealMax))
+            } else -> println("\nValores inválidos!")
         }
-        in 18.50..24.99 -> {
-            println("\nResultado: Peso normal!\nValor do IMC: %.2f".format(resultadoImc))
-            println("Parabéns! Está com o seu peso ideal.")
-        }
-        in 25.00..29.99 -> {
-            println("\nResultado: Acima do peso (Sobrepeso)!\nValor do IMC: %.2f".format(resultadoImc))
-            println("Sugestão de peso: %.2f".format(pesoIdealMin) + " a %.2f".format(pesoIdealMax))
-        }
-        in 30.00..34.99 -> {
-            println("\nResultado: Obesidade nível 1!\nValor do IMC: %.2f".format(resultadoImc))
-            println("Sugestão de peso: %.2f".format(pesoIdealMin) + " a %.2f".format(pesoIdealMax))
-        }
-        in 35.00..39.99 -> {
-            println("\nResultado: Obesidade nível 2!\nValor do IMC: %.2f".format(resultadoImc))
-            println("Sugestão de peso: %.2f".format(pesoIdealMin) + " a %.2f".format(pesoIdealMax))
-        }
-        in 40.00..99.99 -> {
-            println("\nResultado: Obesidade nível 3!\nValor do IMC: %.2f".format(resultadoImc))
-            println("Sugestão de peso: %.2f".format(pesoIdealMin) + " a %.2f".format(pesoIdealMax))
-        }
+    } else {
+        println("Digite valores compatíveis com o peso e altura!")
     }
 }
